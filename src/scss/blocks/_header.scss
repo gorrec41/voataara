@@ -5,7 +5,7 @@
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    background: #475228;
+    background: var(--gren);
     background-image: url('./../../img/header/bg1.jpg');
     background-position: center;
     background-size: cover;
@@ -20,14 +20,14 @@
     align-items: center;
     width: 100%;
     height: 90px;
-    background: #fff;
+    background: var(--white);
     z-index: 1;
     a{
-        color: rgba(71, 82, 40, .7);
+        color: var(--linkgreen);
         transition: .5s;
     }
     a:hover{
-        color: rgba(71, 82, 40, 1);
+        color: var(--gren);
     }
 }
 
@@ -50,24 +50,26 @@
     left: 50%;
     width: 140px;
     height: 140px;
-    background: #fff;
+    background: var(--white);
     transform: translate(-50% -50%);
     transform:rotate(45deg);
     z-index: -1;
 }
+
 .nav-list {
     display: flex;
     justify-content: start;
     align-items: center;
 }
+
 .nav-item{
     margin-right: 30px;
     &:last-child{
         margin-right: 0;
     }
 }
-.slaid-tab {
 
+.slaid-tab {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -76,37 +78,41 @@
     left: 135px;
     width: 330px;
     height: 85px;
-    background: #fff;
-
+    background: var(--white);
 }
+
 .slaid-circle{
     margin-right: 5px;
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background:rgba(71, 82, 40, 0.4);
-    ;
+    background:var(--laitegren);
     &:nth-last-child(2){
         margin-right: 100px;
     }
 }
+
 .activ{
-    background: rgba(71, 82, 40, 1);
+    background: var(--gren);
 }
+
 .headerc-content-wrap{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: var(--white);
 } 
+
 .header-content{
     margin-right: 100px;
 } 
+
 .header-title{
     margin-bottom: 26px;
     font-size: 52px;
     font-weight: 700;
 } 
+
 .header-artical{
     margin-bottom: 26px;
     max-width: 660px;
@@ -114,14 +120,22 @@
     font-size: 26px;
     font-weight: 400;
 }
+
 .header-date{
     margin-bottom: 68px;
     font-size: 26px;
     font-weight: 600;
 } 
+
 .header-link{
     padding: 20px 40px;
     text-transform: uppercase;
-    color: #fff;
-    border: 2px solid #fff;
+    color:var(--white);
+    border: 2px solid var(--white);
+    transition: .5s;
+    &:hover{
+        background:var(--white);
+        color: var(--gren);
+        border: 2px solid var(--gren);
+    }
 }
