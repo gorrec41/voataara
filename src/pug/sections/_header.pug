@@ -1,0 +1,43 @@
+include ./../mixins/_mix
+
+header.header
+    nav.nav 
+        .nav-arrow
+        a.nav-logo(href="#!") 
+            |Центр развития NEO
+        ul.nav-list 
+            li.nav-item 
+                a.nav-link(href="#!") 
+                    |Программа
+            li.nav-item 
+                a.nav-link(href="#!") 
+                    |Видеотека
+            li.nav-item 
+                a.nav-link(href="#!") 
+                    |Галерея
+            li.nav-item 
+                a.nav-link(href="#!") 
+                    |Записаться
+
+        .nav-contact 
+            a.nav-email(href="mailto:info@shkolaneo.ru") 
+                |info@shkolaneo.ru /  
+            a.nav-phone(href="tel:+79879124043") 
+                |+7 (987) 912-40 43
+    .slaid-tab 
+        .slaid-circle.activ
+        .slaid-circle
+        .slaid-circle
+        +arrowleft
+    .headerc-content-wrap 
+        .header-content 
+            h1.header-title 
+                |Карелия, гора Воттоваара
+            p.header-artical 
+                |Приглашаем посетить таинственные уголки Карелии и получить энергетические трансформации сознания
+            p.header-date 
+                |С 18 по 28 июня 2021 года
+            a.header-link(href="#!")
+                |Записаться 
+        .header-img 
+            +headerimg
