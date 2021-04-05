@@ -1,0 +1,37 @@
+.practice,
+.descriptionone{
+    padding-left: 135px;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    .container-desc{
+        .namber-page{
+            bottom: 0;
+            right: 20px;
+        }
+    }
+}
+.practice-wraper,
+.descriptionone-wraper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+} 
+.practice-img,
+.descriptionone-img{
+    margin-right: 140px;
+} 
+.practice-content,
+.descriptionone-content{
+    max-width: 630px;
+    padding-right: 20px;
+} 
+.practice-title,
+.descriptionone-title{
+    margin-bottom: 105px;
+}
+.practice-artical,
+.descriptionone-artical{
+    margin-bottom: 50px;
+} 

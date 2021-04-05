@@ -3,7 +3,7 @@
     padding-left: 135px;
     padding-bottom: 120px;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh; 
     height: 100%;
     background: var(--gren);
     background-image: url('./../../img/header/bg1.jpg');
@@ -128,6 +128,7 @@
 } 
 
 .header-link{
+    display: inline-block;
     padding: 20px 40px;
     text-transform: uppercase;
     color:var(--white);
