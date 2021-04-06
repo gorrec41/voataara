@@ -1,3 +1,4 @@
+.line,
 .othername{
     position: relative;
     padding: 110px 0;
@@ -5,7 +6,6 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    background-image: url('./../../img/section4/bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,4 +21,7 @@
         background: var(--bgcolor);
         z-index: -1;
     }
+}
+.othername{
+    background-image: url('./../../img/section4/bg.jpg');
 }
