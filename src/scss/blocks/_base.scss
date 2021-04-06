@@ -1,9 +1,11 @@
 :root {
-    --linkgreen:rgba(71, 82, 40, .7);
+    --progblock: rgba(126, 139, 86, 0.2);
     --laitegren:rgba(71, 82, 40, 0.4);
-    --gren: rgba(71, 82, 40, 1);
+    --linkgreen:rgba(71, 82, 40, .7);
+    --gren: #475228;
     --white:#fff;
     --bgcolor:rgba(0, 0, 0, .4);
+
   }
 
 //   var(--white);
@@ -11,6 +13,7 @@
 //   var(--laitegren);
 //   var(--gren);
 //   var(--bgcolor);
+//   var(--progblock);
 *{
     box-sizing: border-box;
 }

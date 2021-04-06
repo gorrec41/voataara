@@ -1,0 +1,13 @@
+.forms{
+    padding: 90px 0;
+    background-image: url('./../../img/section7/bg.jpg');
+    &::after{
+        background: var(--bgcolor);
+    }
+}
+
+.forms-wrap{
+    border-radius: 10px;
+    max-width: 500px;
+   margin: auto;
+} 
