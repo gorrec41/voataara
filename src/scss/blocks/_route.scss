@@ -1,0 +1,14 @@
+.route{
+    background-image: url('./../../img/section6/bg.jpg');
+    &::after{
+        background: var(--bgcolor);
+    }
+}
+.route-wrap{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    .small-artical:first-child{
+        margin-bottom: 20px;
+    }
+}
