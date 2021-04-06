@@ -3,4 +3,34 @@
 }
 .video-title{
     text-align: center;
+    margin-bottom: 70px;
+}
+.tabcontainer{
+    display: flex;
+    justify-content: center;
+
+}
+.tab{
+    margin-right: 50px;
+}
+.tab__item{
+    font-size: 20px;
+    color:var(--linkgreen);
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    &:hover{
+        color:var(--gren);
+    }
+}
+.tab_active{
+    color:var(--gren);
+}
+.tabcontent{
+    display:none;
+}
+.activvideo{
+    display: block;
 }

@@ -1,3 +1,39 @@
+include ./../mixins/_yutube
+
+
 section.video 
     h2.video-title.title
         |Видео отчет о прошлой поездке
+    .container 
+        .tabcontainer
+            .tab
+                .tab__items
+                    .tab__item.tab_active
+                        |Обустройство
+                    .tab__item
+                        |Поход на гору
+                    .tab__item
+                        |Поход день 2
+                    .tab__item
+                        |На горе
+                    .tab__item
+                        |Речка
+                    .tab__item
+                        |Черника
+            .tabvideo
+                .tabcontent.activvideo
+                    +video1
+                .tabcontent
+                    +video3                             
+                .tabcontent
+                    +video4
+                .tabcontent
+                    +video2
+                .tabcontent
+                    +video5
+                .tabcontent
+                    +video6        
+                
+                    
+                
+            
