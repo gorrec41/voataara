@@ -1,16 +1,22 @@
 window.addEventListener('DOMContentLoaded', () => {
     const tab = document.querySelectorAll('.tab__item'),
         tabItems = document.querySelector('.tab__items'),
-        tabVideo = document.querySelectorAll('.tabcontent');
-    
+        tabVideo = document.querySelectorAll('.tabcontent'),
+        feedback = document.querySelector('.feedback-tabs'),
+        feedbackItem = document.querySelectorAll('.feedback-item'),
+        next = document.querySelector('.btn-next'),
+        back = document.querySelector('.btn-back');
+    let index = 0;
+
+
+        
+    // ------------------Tabs--------------------
     function delActiv() {
         tab.forEach(item => {
             item.classList.remove('tab_active')
-            console.log(item)
         })
         tabVideo.forEach(item => {
             item.classList.remove('activvideo')
-            console.log(item)
         })
     }
     function addActiv(i=0) {
@@ -28,9 +34,46 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         }
     })
+    // -----------------/ Tabs--------------------
 
-
-
-
-    
+    // ------------------Slider--------------------
+        function hideFeedback(){
+            feedbackItem.forEach(item=>{
+                item.classList.remove('feedback-activ')
+                item.classList.add('feedback-hide')
+            })
+        }
+        function showFeedback(n){
+            feedbackItem[n].classList.remove('feedback-hide')
+            feedbackItem[n].classList.add('feedback-activ')
+            }
+        hideFeedback();
+        showFeedback(index)
+        next.addEventListener('click',()=>{
+            index=++index;
+            if(index>feedbackItem.length-1){
+                index=0
+                hideFeedback();
+                showFeedback(index);
+                console.log(index)
+            }else{
+                hideFeedback();
+                showFeedback(index);
+                console.log(index)
+            } 
+        })
+        back.addEventListener('click',()=>{
+            index=--index;
+            if(index<0){
+                index=feedbackItem.length-1
+                hideFeedback();
+                showFeedback(index);
+                console.log(index)
+            }else{
+                hideFeedback();
+                showFeedback(index);
+                console.log(index)
+            }
+        })
+    // -----------------/ Slider--------------------
 })
