@@ -23,7 +23,11 @@
 } 
 .practice-img,
 .descriptionone-img{
-    margin-right: 140px;
+    margin: 0 auto;
+    @media (min-width: 1200px){
+        margin-right: 140px;
+
+    }
 } 
 .practice-content,
 .descriptionone-content{
