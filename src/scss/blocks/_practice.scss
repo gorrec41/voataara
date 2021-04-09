@@ -2,3 +2,9 @@
     padding-top: 100px;
     padding-bottom: 100px;
 }
+.practice-img {
+    margin-bottom: 50px;
+    @media (min-width: 768px){
+        margin-bottom: 0;
+    }
+}

@@ -6,8 +6,11 @@
     .container-desc{
         margin-left: auto;
         .namber-page{
-            bottom: 0;
-            left: 20px;
+            
+            @media (min-width: 1200px){
+                bottom: 0;
+                left: 20px;
+            }
         }
     }
     @media (min-width: 1200px){
@@ -25,11 +28,19 @@
 }
 .espedition-content{
     max-width: 630px;
-    padding-left: 20px;
+    @media (min-width: 768px){
+        padding-left: 20px;
+    }
+
 }
 .espedition-title{
     margin-bottom: 105px;
 }
 .espedition-artical{
     margin-bottom: 50px;
+}
+.espedition-img{
+    max-width: 330px;
+    height: auto;
+    
 }
