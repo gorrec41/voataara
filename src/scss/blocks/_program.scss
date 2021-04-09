@@ -1,6 +1,8 @@
 .program{
     padding: 90px 0;
     text-align: center;
+    width: 100%;
+    overflow: hidden;
 }
 .program-title{
     padding-bottom: 80px;
@@ -16,10 +18,19 @@
 }
 .program-item{
     display: flex;
-    max-width: 770px;
+    max-width: 320px;
     margin-bottom: 40px;
     &:last-child{
         margin-bottom: 0;
+    }
+    @media (min-width: 400px){
+        max-width: 390px;
+    }
+    @media (min-width: 500px){
+        max-width: 490px;
+    }
+    @media (min-width: 768px){
+        max-width: 770px;
     }
 }
 .program-text,
@@ -34,15 +45,22 @@
     width: 100px;
     background: var(--gren);
     color: var(--white);
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 700;
+    @media (min-width: 768px){
+        font-size: 60px;
+    }
 }
 .program-text{
     padding: 30px 60px;
     justify-content: start;
     width: 670px;
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 400;
+    text-align: left;
     background: var(--progblock);
     color:var(--gren);
+    @media (min-width: 768px){
+        font-size: 26px;
+    }
 }

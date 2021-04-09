@@ -6,14 +6,22 @@
     margin-bottom: 70px;
 }
 .foto-wrap{
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items:center;
     gap: 30px;
+
+    @media (min-width: 768px){
+        flex-direction: row;
+    }
 }
 .gallary-item{
     position: relative;
     display: inline-block;
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
     height: auto;
     cursor: pointer;
     overflow: hidden;
@@ -35,7 +43,7 @@
 .gallery-title{
     position: absolute;
     left: 0;
-    bottom: -100%;
+    bottom: 3px;
     width: 100%;
     height: 30%;
     background: var(--linkgreen);
@@ -46,6 +54,9 @@
     font-size: 20px;
     font-weight: 700;
     transition: 1s;
+    @media (min-width: 768px){
+        bottom: -100%;
+    }
 }
 .foto-artical{
     font-size: 20px;

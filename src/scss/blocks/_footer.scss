@@ -9,6 +9,10 @@
 .footer-wrap{
     display: flex;
     justify-content: space-between;
+    flex-direction: column-reverse;
+    @media (min-width: 465px){
+        flex-direction: row;
+    }
 }
 .footer-left{
     margin-right: 70px;
