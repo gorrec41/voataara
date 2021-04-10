@@ -4,12 +4,14 @@
     padding-bottom: 120px;
     width: 100%;
     min-height: 100vh; 
+
     height: 100%;
     background: var(--gren);
-    background-image: url('./../../img/header/bg1.jpg');
+    // background-image: url('./../../img/header/bg1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: .9s;
     @media (min-width: 500px){
         padding-top: 50px;
     }

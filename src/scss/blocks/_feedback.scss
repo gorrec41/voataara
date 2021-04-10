@@ -14,6 +14,15 @@
     max-width: 900px;
     height: auto;
     position: relative;
+    &::after{
+        content:"";
+        position: absolute;
+        left: 50%;
+        bottom: -35px;
+        width: 60%;
+        transform: translateX(-50%);
+        border-bottom: 2px solid var(--gren);
+    }
 }
 .btn-back{
     position: absolute;
@@ -22,6 +31,9 @@
     width: 48px;
     height: 48px;
     cursor: pointer;
+    svg{
+        border-radius: 50%;
+    }
 }
 .btn-next{
     position: absolute;
@@ -31,6 +43,9 @@
     height: 48px;
     transform: rotate(180deg);
     cursor: pointer;
+    svg{
+        border-radius: 50%;
+    }
 }
 .feedback-item{
     width: 100%;

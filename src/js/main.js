@@ -1,15 +1,38 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const tab = document.querySelectorAll('.tab__item'),
-        tabItems = document.querySelector('.tab__items'),
-        tabVideo = document.querySelectorAll('.tabcontent'),
-        feedback = document.querySelector('.feedback-tabs'),
-        feedbackItem = document.querySelectorAll('.feedback-item'),
-        next = document.querySelector('.btn-next'),
-        back = document.querySelector('.btn-back');
-    let index = 0;
+    const header= document.querySelector('.header')
+    tab = document.querySelectorAll('.tab__item'),
+    tabItems = document.querySelector('.tab__items'),
+    tabVideo = document.querySelectorAll('.tabcontent'),
+    feedback = document.querySelector('.feedback-tabs'),
+    feedbackItem = document.querySelectorAll('.feedback-item'),
+    next = document.querySelector('.btn-next'),
+    back = document.querySelector('.btn-back'),
+    arrHeader = [
+        "url('./../../img/header/bg1.jpg')",
+        "url('./../../img/header/bg2.jpg')",
+        "url('./../../img/header/bg3.jpg')",
+    ];
 
+let index = 0,
+    hIndex= 0;
 
-        
+// ------------------bg header slider--------
+    function hIndexNamber() {
+        if (hIndex > 2) {
+            console.log(hIndex)
+            sliderHederBg()
+            hIndex = 0
+        } else {
+            console.log(hIndex)
+            sliderHederBg()
+            ++hIndex
+    }
+}
+function sliderHederBg() {
+    header.style.backgroundImage = arrHeader[hIndex]
+    }
+sliderHederBg()
+setInterval(hIndexNamber, 5000);
     // ------------------Tabs--------------------
     function delActiv() {
         tab.forEach(item => {
