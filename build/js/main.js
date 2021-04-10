@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const header= document.querySelector('.header')
+    const header = document.querySelector('.header')
+    circle = document.querySelectorAll('.slaid-circle')
     tab = document.querySelectorAll('.tab__item'),
     tabItems = document.querySelector('.tab__items'),
     tabVideo = document.querySelectorAll('.tabcontent'),
@@ -17,6 +18,23 @@ let index = 0,
     hIndex= 0;
 
 // ------------------bg header slider--------
+    function circleHide() {
+        circle.forEach ((item,i)=> {
+            circle[i].classList.remove('activ')
+        })
+    }
+    function circleActiv() {
+        circle.forEach((item, i) => {
+            console.log(item)
+            console.log(hIndex)
+            if (hIndex == i) {
+                circleHide()
+                circle[i].classList.add('activ')
+                console.log(i)
+                console.log(hIndex)
+            }
+        })
+    }
     function hIndexNamber() {
         if (hIndex > 2) {
             console.log(hIndex)
@@ -30,6 +48,7 @@ let index = 0,
 }
 function sliderHederBg() {
     header.style.backgroundImage = arrHeader[hIndex]
+    circleActiv()
     }
 sliderHederBg()
 setInterval(hIndexNamber, 5000);
