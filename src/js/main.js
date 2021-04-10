@@ -8,6 +8,13 @@ window.addEventListener('DOMContentLoaded', () => {
     feedbackItem = document.querySelectorAll('.feedback-item'),
     next = document.querySelector('.btn-next'),
     back = document.querySelector('.btn-back'),
+    modalGallary = document.querySelector('.modalgallary'),
+    gellaryItem = document.querySelectorAll('.foto-gallery'),
+    fotoWrap = document.querySelector('.foto-wrap'),
+    modalHides = document.querySelector('.modal-close'),
+    arrowModalNext = document.querySelector('.neximg'),
+    arrowModalBack = document.querySelector('.backimg'),
+    galleryImage = document.querySelectorAll('.imggalary')  
     arrHeader = [
         "url('./../../img/header/bg1.jpg')",
         "url('./../../img/header/bg2.jpg')",
@@ -19,29 +26,24 @@ let index = 0,
 
 // ------------------bg header slider--------
     function circleHide() {
-        circle.forEach ((item,i)=> {
-            circle[i].classList.remove('activ')
+        circle.forEach (item=> {
+            item.classList.remove('activ')
         })
     }
     function circleActiv() {
         circle.forEach((item, i) => {
-            console.log(item)
-            console.log(hIndex)
             if (hIndex == i) {
                 circleHide()
-                circle[i].classList.add('activ')
-                console.log(i)
-                console.log(hIndex)
+                item.classList.add('activ')
             }
         })
     }
     function hIndexNamber() {
         if (hIndex > 2) {
-            console.log(hIndex)
+            
             sliderHederBg()
             hIndex = 0
         } else {
-            console.log(hIndex)
             sliderHederBg()
             ++hIndex
     }
@@ -97,11 +99,9 @@ setInterval(hIndexNamber, 5000);
                 index=0
                 hideFeedback();
                 showFeedback(index);
-                console.log(index)
             }else{
                 hideFeedback();
                 showFeedback(index);
-                console.log(index)
             } 
         })
         back.addEventListener('click',()=>{
@@ -110,12 +110,67 @@ setInterval(hIndexNamber, 5000);
                 index=feedbackItem.length-1
                 hideFeedback();
                 showFeedback(index);
-                console.log(index)
             }else{
                 hideFeedback();
                 showFeedback(index);
-                console.log(index)
             }
         })
     // -----------------/ Slider--------------------
+    // ------------------Modal Gallary--------------
+            //---open and close modal window---
+    function hideGallary() {
+        modalGallary.classList.remove('modalshow')
+    }
+    function showGallary() {
+        modalGallary.classList.add('modalshow')
+    }
+    fotoWrap.addEventListener('click', (ev) => {
+        const target = ev.target
+        if (target.classList.contains("gallery-title")==true){
+            showGallary()
+        }
+    })
+    modalHides.addEventListener('click', () => {
+        hideGallary()
+    })
+            //-// open and close modal window---
+            //---listen images------
+    function hudeImgGallary() {
+        galleryImage.forEach(it => {
+            it.classList.remove('imgactive')
+        })
+    }
+    let indexModal = 0;
+    function showImgGallary(i=0) {
+        galleryImage.forEach(()=> {
+            galleryImage[i].classList.add('imgactive')
+        })
+    }
+    
+    hudeImgGallary()
+    showImgGallary()
+    arrowModalNext.addEventListener('click', () => {
+        indexModal++
+        if (indexModal > galleryImage.length-1) {
+            indexModal = 0
+            hudeImgGallary()
+            showImgGallary(indexModal)
+        } else {
+            hudeImgGallary()
+            showImgGallary(indexModal)
+        }     
+    })
+    arrowModalBack.addEventListener('click', () => {
+        indexModal--
+        if (indexModal < 0) {
+            indexModal = galleryImage.length-1
+            hudeImgGallary()
+            showImgGallary(indexModal)
+        } else {
+            hudeImgGallary()
+            showImgGallary(indexModal)
+        }     
+    })
+            //---// listen images---
+     // ------------------Modal Gallary--------------
 })

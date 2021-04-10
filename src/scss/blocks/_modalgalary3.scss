@@ -1,0 +1,78 @@
+.modalgallary{
+    display: none;
+    span{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        height: 4px;
+        background: var(--whitesp);
+        cursor: pointer;
+        &::before,
+        &::after{
+            content:'';
+            position: absolute;
+            right: 0px;
+            width: 30px;
+            height: 4px;
+            background: var(--white);
+            transition: .5s;
+            top: 0;
+        }
+        &::before{
+            transform: rotate(45deg);
+        }
+        &::after{
+            transform: rotate(-45deg); 
+        }
+        
+    }
+    
+}
+.modalshow{
+    display: block;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: var(--mdcolor);
+    overflow: hidden;
+    z-index: 100;
+}
+.neximg,
+.backimg{
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    cursor: pointer;
+    svg{
+        width: 100%;
+        height: 100%;
+        fill:var(--white);
+    }
+}
+.neximg{
+    right: 20px;
+    transform: rotate(90deg);
+}
+.backimg{
+    left: 20px;
+    transform: rotate(-90deg);
+}
+.imggalary{
+    position: fixed;
+    bottom: -1000%;
+    margin: 0 auto;
+}
+.imgactive{
+    top: 0;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}

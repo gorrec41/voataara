@@ -4,10 +4,11 @@
     --linkgreen:rgba(71, 82, 40, .7);
     --gren: rgb(71, 82, 40);
     --white:#fff;
+    --whitesp:rgba(255, 255, 255, 0);
     --bgcolor:rgba(0, 0, 0, .4);
-
+    --mdcolor:rgba(0, 0, 0, 1);
   }
-
+//  var(--whitesp);
 //   var(--white);
 //   var(--linkgreen);
 //   var(--laitegren);
@@ -29,7 +30,6 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    
 }
 body{
     width: 100%;
@@ -45,6 +45,9 @@ a{
 img{
     width: 100%;
     height: 100%;
+}
+.modactiv{
+    overflow: hidden;
 }
 .container-desc,
 .container{
