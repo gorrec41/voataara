@@ -1,7 +1,8 @@
 .modalgallary{
     display: none;
     span{
-        position: absolute;
+        content: '';
+        position: fixed;
         top: 30px;
         right: 30px;
         width: 30px;
@@ -25,7 +26,12 @@
         &::after{
             transform: rotate(-45deg); 
         }
-        
+        &:hover{
+            &::before,
+            &::after{
+                background: var(--gren);
+            }
+        }
     }
     
 }
@@ -54,6 +60,12 @@
         width: 100%;
         height: 100%;
         fill:var(--white);
+        transition: .4s;
+    }
+    &:hover{
+        svg{
+            fill: var(--gren);
+        }
     }
 }
 .neximg{
@@ -67,12 +79,18 @@
 .imggalary{
     position: fixed;
     bottom: -1000%;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .imgactive{
     top: 0;
     height: 100%;
-    width: auto;
+    max-width: auto;
     left: 50%;
     transform: translateX(-50%);
+    img{
+        width: 100%;
+        height: auto;
+    }
 }

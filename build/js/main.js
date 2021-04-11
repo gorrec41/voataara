@@ -14,7 +14,10 @@ window.addEventListener('DOMContentLoaded', () => {
     modalHides = document.querySelector('.modal-close'),
     arrowModalNext = document.querySelector('.neximg'),
     arrowModalBack = document.querySelector('.backimg'),
-    galleryImage = document.querySelectorAll('.imggalary')  
+    galleryImage = document.querySelectorAll('.imggalary'),
+    modalgGalary1 = document.querySelectorAll('.mg1'),
+    modalgGalary2 = document.querySelectorAll('.mg2'),
+    modalgGalary3 = document.querySelectorAll('.mg3'),    
     arrHeader = [
         "url('./../../img/header/bg1.jpg')",
         "url('./../../img/header/bg2.jpg')",
@@ -22,7 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
     ];
 
 let index = 0,
-    hIndex= 0;
+    hIndex = 0,
+    indexModal = 0;
 
 // ------------------bg header slider--------
     function circleHide() {
@@ -39,7 +43,7 @@ let index = 0,
         })
     }
     function hIndexNamber() {
-        if (hIndex > 2) {
+        if (hIndex > arrHeader.length-1) {
             
             sliderHederBg()
             hIndex = 0
@@ -121,16 +125,38 @@ setInterval(hIndexNamber, 5000);
     function hideGallary() {
         modalGallary.classList.remove('modalshow')
     }
+    
     function showGallary() {
         modalGallary.classList.add('modalshow')
+        document.querySelector('body').classList.add('noscroll')
+
     }
+    let imgfunc = '',
+        func = '';
     fotoWrap.addEventListener('click', (ev) => {
         const target = ev.target
-        if (target.classList.contains("gallery-title")==true){
-            showGallary()
+        if (target.classList.contains("gl1") == true) {
+            hideGallary()
+            showGallary(modalgGalary1)
+            imgfunc = 'gl1'
+            func='modalgGalary1'
+        } else if (target.classList.contains("gl2") == true) {
+            hideGallary()
+            showGallary(modalgGalary2)
+            imgfunc = 'gl2'
+            func='modalgGalary2'
+        }else if (target.classList.contains("gl3") == true) {
+            hideGallary()
+            showGallary(modalgGalary2)
+            imgfunc = 'gl3'
+            func = 'modalgGalary3'
+            
         }
+        
     })
     modalHides.addEventListener('click', () => {
+        document.querySelector('body').classList.remove('noscroll')
+        document.querySelector('body').classList.add('body')
         hideGallary()
     })
             //-// open and close modal window---
@@ -140,35 +166,49 @@ setInterval(hIndexNamber, 5000);
             it.classList.remove('imgactive')
         })
     }
-    let indexModal = 0;
-    function showImgGallary(i=0) {
-        galleryImage.forEach(()=> {
-            galleryImage[i].classList.add('imgactive')
-        })
+    
+    function showImgGallary(i = 0) {
+        if (imgfunc == 'gl1') {
+            modalgGalary1.forEach(()=> {
+            modalgGalary1[i].classList.add('imgactive')
+            })
+        } else if(imgfunc == 'gl2'){
+            modalgGalary2.forEach(()=> {
+                modalgGalary2[i].classList.add('imgactive')
+                })
+        } else if(imgfunc == 'gl3'){
+            modalgGalary3.forEach(()=> {
+                modalgGalary3[i].classList.add('imgactive')
+                })
+        }
     }
     
     hudeImgGallary()
-    showImgGallary()
+    showImgGallary(0)
     arrowModalNext.addEventListener('click', () => {
         indexModal++
-        if (indexModal > galleryImage.length-1) {
+        if (indexModal > func.length-1) {
             indexModal = 0
             hudeImgGallary()
-            showImgGallary(indexModal)
+            showImgGallary(0)
+            console.log(func.length)
         } else {
             hudeImgGallary()
             showImgGallary(indexModal)
+            console.log(func.length)
         }     
     })
     arrowModalBack.addEventListener('click', () => {
         indexModal--
         if (indexModal < 0) {
-            indexModal = galleryImage.length-1
+            indexModal = func.length-1
             hudeImgGallary()
-            showImgGallary(indexModal)
+            showImgGallary(func.length-1)
+            console.log(func.length)
         } else {
             hudeImgGallary()
             showImgGallary(indexModal)
+            console.log(indexModal)
         }     
     })
             //---// listen images---
