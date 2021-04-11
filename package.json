@@ -20,5 +20,8 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-watch": "^4.2.4"
+	},
+	"devDependencies": {
+		"gulp-imagemin": "^7.1.0"
 	}
 }

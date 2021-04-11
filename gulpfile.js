@@ -28,6 +28,7 @@ gulp.task('pug', function(callback) {
 		.pipe( browserSync.stream() )
 	callback();
 });
+//таск для минимизации изображений
 
 // Таск для компиляции SCSS в CSS
 gulp.task('scss', function(callback) {
@@ -51,7 +52,6 @@ gulp.task('scss', function(callback) {
 		.pipe( browserSync.stream() )
 	callback();
 });
-
 // Копирование Изображений
 gulp.task('copy:img', function(callback) {
 	return gulp.src('./src/img/**/*.*')
@@ -69,7 +69,9 @@ gulp.task('copy:js', function(callback) {
 // Слежение за HTML и CSS и обновление браузера
 gulp.task('watch', function() {
 
+	
 	// Следим за картинками и скриптами и обновляем браузер
+
 	watch( ['./build/js/**/*.*', './build/img/**/*.*'], gulp.parallel(browserSync.reload) );
 
 	// Запуск слежения и компиляции SCSS с задержкой

@@ -26,7 +26,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 let index = 0,
     hIndex = 0,
-    indexModal = 0;
+    indexModal = 0,
+    imgfunc = '',
+    func = '',
+    arrmod;
 
 // ------------------bg header slider--------
     function circleHide() {
@@ -129,28 +132,29 @@ setInterval(hIndexNamber, 5000);
     function showGallary() {
         modalGallary.classList.add('modalshow')
         document.querySelector('body').classList.add('noscroll')
-
     }
-    let imgfunc = '',
-        func = '';
+    
     fotoWrap.addEventListener('click', (ev) => {
         const target = ev.target
         if (target.classList.contains("gl1") == true) {
-            hideGallary()
-            showGallary(modalgGalary1)
             imgfunc = 'gl1'
-            func='modalgGalary1'
+            func = 'modalgGalary1'
+            hideGallary()
+            hudeImgGallary()
+            showGallary()
+            showImgGallary()
         } else if (target.classList.contains("gl2") == true) {
-            hideGallary()
-            showGallary(modalgGalary2)
             imgfunc = 'gl2'
-            func='modalgGalary2'
-        }else if (target.classList.contains("gl3") == true) {
+            func = 'modalgGalary2'
             hideGallary()
-            showGallary(modalgGalary2)
+            showGallary()
+            showImgGallary()
+        }else if (target.classList.contains("gl3") == true) {
             imgfunc = 'gl3'
             func = 'modalgGalary3'
-            
+            hideGallary()
+            showGallary()
+            showImgGallary()
         }
         
     })
@@ -158,6 +162,7 @@ setInterval(hIndexNamber, 5000);
         document.querySelector('body').classList.remove('noscroll')
         document.querySelector('body').classList.add('body')
         hideGallary()
+        hudeImgGallary()
     })
             //-// open and close modal window---
             //---listen images------
@@ -182,9 +187,7 @@ setInterval(hIndexNamber, 5000);
                 })
         }
     }
-    
     hudeImgGallary()
-    showImgGallary(0)
     arrowModalNext.addEventListener('click', () => {
         indexModal++
         if (indexModal > func.length-1) {
