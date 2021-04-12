@@ -28,8 +28,7 @@ let index = 0,
     hIndex = 0,
     indexModal = 0,
     imgfunc = '',
-    func = '',
-    arrmod;
+    func = '';
 
 // ------------------bg header slider--------
     function circleHide() {
@@ -60,7 +59,7 @@ function sliderHederBg() {
     circleActiv()
     }
 sliderHederBg()
-setInterval(hIndexNamber, 5000);
+setInterval(hIndexNamber, 2000);
     // ------------------Tabs--------------------
     function delActiv() {
         tab.forEach(item => {
