@@ -17,7 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
     galleryImage = document.querySelectorAll('.imggalary'),
     modalgGalary1 = document.querySelectorAll('.mg1'),
     modalgGalary2 = document.querySelectorAll('.mg2'),
-    modalgGalary3 = document.querySelectorAll('.mg3'),    
+    modalgGalary3 = document.querySelectorAll('.mg3'), 
+    body = document.querySelector('body'),    
     arrHeader = [
         "url('./../../img/header/bg1.jpg')",
         "url('./../../img/header/bg2.jpg')",
@@ -29,7 +30,18 @@ let index = 0,
     indexModal = 0,
     imgfunc = '',
     func = '';
+//-------------------------------------------
+//Инициализировать приложение
 
+window.addEventListener("resize", InitApp); //При растягивании окна приложение будет инициализироваться заново
+
+function InitApp() //Растягиваем холст на весь экран
+{
+    body.width = window.innerWidth;
+    body.height = window.innerHeight;
+}
+InitApp(); 
+//-------------------------------------------
 // ------------------bg header slider--------
     function circleHide() {
         circle.forEach (item=> {
