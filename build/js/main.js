@@ -34,7 +34,6 @@ let index = 0,
 //Инициализировать приложение
 
 window.addEventListener("resize", InitApp); //При растягивании окна приложение будет инициализироваться заново
-
 function InitApp() //Растягиваем холст на весь экран
 {
     body.width = window.innerWidth;
