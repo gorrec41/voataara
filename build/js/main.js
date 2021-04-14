@@ -116,9 +116,11 @@ setInterval(hIndexNamber, 2000);
                 index=0
                 hideFeedback();
                 showFeedback(index);
+                stopVideo()
             }else{
                 hideFeedback();
                 showFeedback(index);
+                stopVideo()
             } 
         })
         back.addEventListener('click',()=>{
