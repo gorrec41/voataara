@@ -39,16 +39,16 @@ window.addEventListener('DOMContentLoaded', () => {
         "xFAEpnzz84I",
         ],
     nameFedback = [
+        "Гузель",
         "Марина",
-        "Мана",
-        "Марин",
-        "Мари",
+        "Лора",
+        "Айрат",
         "Максим"
     ],
     arrHeader = [
-        "url('./../../img/header/bg1.jpg')",
-        "url('./../../img/header/bg2.jpg')",
-        "url('./../../img/header/bg3.jpg')",
+        "url('./img/header/bg1.jpg')",
+        "url('./img/header/bg2.jpg')",
+        "url('./img/header/bg3.jpg')",
     ];
 
     let indeximg = 0,

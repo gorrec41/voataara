@@ -39,10 +39,10 @@ window.addEventListener('DOMContentLoaded', () => {
         "xFAEpnzz84I",
         ],
     nameFedback = [
+        "Гузель",
         "Марина",
-        "Мана",
-        "Марин",
-        "Мари",
+        "Лора",
+        "Айрат",
         "Максим"
     ],
     arrHeader = [

@@ -577,7 +577,7 @@ img {
       padding-left: 135px; } }
 
 .history {
-  background-image: url("./../../img/section2/image 5.jpg"); }
+  background-image: url("./../img/section2/image 5.jpg"); }
 
 .route-wrap,
 .history-wrap {
@@ -699,7 +699,7 @@ img {
     z-index: -1; }
 
 .othername {
-  background-image: url("./../../img/section4/bg.jpg"); }
+  background-image: url("./../img/section4/bg.jpg"); }
 
 .practice {
   padding-top: 100px;
@@ -712,7 +712,7 @@ img {
       margin-bottom: 0; } }
 
 .route {
-  background-image: url("./../../img/section6/bg.jpg"); }
+  background-image: url("./../img/section6/bg.jpg"); }
   .route::after {
     background: var(--bgcolor); }
 
@@ -813,7 +813,7 @@ img {
 
 .forms {
   padding: 90px 0;
-  background-image: url("./../../img/section7/bg.jpg"); }
+  background-image: url("./../img/section7/bg.jpg"); }
   .forms::after {
     background: var(--bgcolor); }
 
@@ -914,7 +914,7 @@ img {
 
 .line {
   padding: 50px 0;
-  background-image: url("./../../img/section8/bg.jpg"); }
+  background-image: url("./../img/section8/bg.jpg"); }
 
 .foto {
   padding: 110px 0; }
