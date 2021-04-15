@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     circle = document.querySelectorAll('.slaid-circle')
     tab = document.querySelectorAll('.tab__item'),
     tabItems = document.querySelector('.tab__items'),
-    tabVideo = document.querySelectorAll('.tabcontent'),
+    tabVideo = document.querySelector('.tabcontent'),
     feedback = document.querySelector('.feedback-tabs'),
     feedbackItem = document.querySelectorAll('.feedback-item'),
     next = document.querySelector('.btn-next'),
@@ -18,18 +18,98 @@ window.addEventListener('DOMContentLoaded', () => {
     modalgGalary1 = document.querySelectorAll('.mg1'),
     modalgGalary2 = document.querySelectorAll('.mg2'),
     modalgGalary3 = document.querySelectorAll('.mg3'), 
-    body = document.querySelector('body'),    
+    body = document.querySelector('body'),
+    divImgFeedback = document.querySelector('.feedback-foto'),
+    divVideoFeedback = document.querySelector('.feedback-video'),
+    ImgFeedback = divImgFeedback.querySelectorAll('img'),
+    namesFeedback = document.querySelector('.feedback-name'),
+    tabVideos=[
+        "j6m_IKIQgsI",
+        "tfZl3wjIMPw",
+        "Drp4i-u6DEA",
+        "xYJQOzbKVE4",
+        "4R3ZJO25rTc",
+        "y2Np3N_jTAI"
+    ]
+    videoFeedback = [
+        "b-ZNuNCtg2M",
+        "iI-vQsTzJ94",
+        "4q7dZNYkQUk",
+        "o8ndky6INwc",
+        "xFAEpnzz84I",
+        ],
+    nameFedback = [
+        "Марина",
+        "Мана",
+        "Марин",
+        "Мари",
+        "Максим"
+    ],
     arrHeader = [
         "url('./../../img/header/bg1.jpg')",
         "url('./../../img/header/bg2.jpg')",
         "url('./../../img/header/bg3.jpg')",
     ];
 
-let index = 0,
-    hIndex = 0,
-    indexModal = 0,
-    imgfunc = '',
-    func = '';
+    let indeximg = 0,
+        indexvid = 0,
+        hIndex = 0,
+        indexModal = 0,
+        imgfunc = '',
+        func = '';
+    
+    
+   // ------------------Slider feedback--------------
+    function video(divBlock,idVideo, itemVideo = 0) {
+        divBlock.innerHTML='<iframe src="https://www.youtube.com/embed/'+idVideo[itemVideo]+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    }
+    function addImg(g = 0) {
+        ImgFeedback[g].classList.remove('fed-img')
+        ImgFeedback[g].classList.add('img-active')
+        namesFeedback.textContent=nameFedback[g]
+    }
+    function dellImg() {
+        ImgFeedback.forEach((i) => {
+            i.classList.remove('img-active')
+            i.classList.add('fed-img')
+        })
+    }
+    dellImg()
+    addImg()
+    video(divVideoFeedback, videoFeedback)
+    video(tabVideo,tabVideos)
+    next.addEventListener('click', () => {
+        if (indexvid > videoFeedback.length - 1 || indeximg > ImgFeedback.length - 2) {
+            indexvid = 0
+            indeximg = 0
+        } else {  
+            ++indexvid
+            ++indeximg 
+        }
+        dellImg()
+        addImg(indeximg)
+        video(divVideoFeedback,videoFeedback, indexvid)
+    })
+    back.addEventListener('click', () => {
+        if (indexvid ==0 || indeximg ==0) {
+            indexvid = videoFeedback.length-1
+            indeximg = --ImgFeedback.length
+        } else {  
+            --indexvid
+            --indeximg
+        }
+        dellImg()
+        addImg(indeximg)
+        video(divVideoFeedback, videoFeedback, indexvid)
+    })
+// -----------------/ Slider feedback--------------------   
+    
+    
+    
+    
+    
+    
+    
 //-------------------------------------------
 //Инициализировать приложение
 
@@ -41,6 +121,7 @@ function InitApp() //Растягиваем холст на весь экран
 }
 InitApp(); 
 //-------------------------------------------
+    
 // ------------------bg header slider--------
     function circleHide() {
         circle.forEach (item=> {
@@ -71,18 +152,20 @@ function sliderHederBg() {
     }
 sliderHederBg()
 setInterval(hIndexNamber, 2000);
+    
+
+
+
+
+
     // ------------------Tabs--------------------
     function delActiv() {
         tab.forEach(item => {
             item.classList.remove('tab_active')
         })
-        tabVideo.forEach(item => {
-            item.classList.remove('activvideo')
-        })
     }
     function addActiv(i=0) {
         tab[i].classList.add('tab_active')
-        tabVideo[i].classList.add('activvideo')
     }
     tabItems.addEventListener('click', (e) => {
         const target = e.target;
@@ -91,50 +174,30 @@ setInterval(hIndexNamber, 2000);
                 if (target == item) {
                     delActiv()
                     addActiv(i)
+                    video(tabVideo,tabVideos,i)
                 }
             })
         }
     })
     // -----------------/ Tabs--------------------
 
-    // ------------------Slider--------------------
-        function hideFeedback(){
-            feedbackItem.forEach(item=>{
-                item.classList.remove('feedback-activ')
-                item.classList.add('feedback-hide')
-            })
-        }
-        function showFeedback(n){
-            feedbackItem[n].classList.remove('feedback-hide')
-            feedbackItem[n].classList.add('feedback-activ')
-            }
-        hideFeedback();
-        showFeedback(index)
-        next.addEventListener('click',()=>{
-            index=++index;
-            if(index>feedbackItem.length-1){
-                index=0
-                hideFeedback();
-                showFeedback(index);
-                stopVideo()
-            }else{
-                hideFeedback();
-                showFeedback(index);
-                stopVideo()
-            } 
-        })
-        back.addEventListener('click',()=>{
-            index=--index;
-            if(index<0){
-                index=feedbackItem.length-1
-                hideFeedback();
-                showFeedback(index);
-            }else{
-                hideFeedback();
-                showFeedback(index);
-            }
-        })
-    // -----------------/ Slider--------------------
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
     // ------------------Modal Gallary--------------
             //---open and close modal window---
     function hideGallary() {
@@ -200,32 +263,45 @@ setInterval(hIndexNamber, 2000);
         }
     }
     hudeImgGallary()
-    arrowModalNext.addEventListener('click', () => {
-        indexModal++
-        if (indexModal > func.length-1) {
-            indexModal = 0
-            hudeImgGallary()
-            showImgGallary(0)
-            console.log(func.length)
-        } else {
-            hudeImgGallary()
-            showImgGallary(indexModal)
-            console.log(func.length)
-        }     
-    })
-    arrowModalBack.addEventListener('click', () => {
-        indexModal--
-        if (indexModal < 0) {
-            indexModal = func.length-1
-            hudeImgGallary()
-            showImgGallary(func.length-1)
-            console.log(func.length)
-        } else {
-            hudeImgGallary()
-            showImgGallary(indexModal)
-            console.log(indexModal)
-        }     
-    })
+        arrowModalNext.addEventListener('click', () => {
+            console.log(+1)
+            indexModal++
+            if (indexModal > func.length - 1) {
+                indexModal = 0
+                console.log(+2)
+                hudeImgGallary()
+                showImgGallary(0)
+                console.log(func.length)
+            } else {
+                console.log(+3)
+                hudeImgGallary()
+                showImgGallary(indexModal)
+            }
+            console.log(+4)
+        })
+        arrowModalBack.addEventListener('click', () => {
+            indexModal--
+            if (indexModal < 0) {
+                indexModal = func.length - 1
+                hudeImgGallary()
+                showImgGallary(func.length - 1)
+                console.log(func.length)
+            } else {
+                hudeImgGallary()
+                showImgGallary(indexModal)
+                console.log(indexModal)
+            }
+            console.log(-1)
+        })
+
             //---// listen images---
      // ------------------Modal Gallary--------------
+    //----------- API yutube-------------------------
+   
+    const tag = document.createElement("script");
+    tag.src = "//www.youtube.com/player_api";
+    const firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+     //---------// API yutube-------------------------
+
 })

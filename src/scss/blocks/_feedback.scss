@@ -49,19 +49,9 @@
 }
 .feedback-item{
     width: 100%;
-}
-.feedback-activ{
-    display: flex;
+    display: inline-flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
-    @media (min-width: 768px){
-        flex-direction: row;
-    }
-}
-.feedback-hide{
-    display: none;
+    align-items:center;
 }
 .wrap-author{
     display: flex;
@@ -74,14 +64,16 @@
 .feedback-foto{
     width: 100px;
     height: 100px;
-
     img{
         width: 100%;
         height: 100%;
     }
-}
-.feedback-name{
-    
+    .fed-img{
+        display: none;
+    }
+    .img-active{
+        display: inline-block;
+    }
 }
 .feedback-video{
     margin: 0 auto;
